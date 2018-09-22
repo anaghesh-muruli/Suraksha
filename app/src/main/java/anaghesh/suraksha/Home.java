@@ -37,6 +37,7 @@ import com.google.android.gms.location.LocationSettingsStatusCodes;
 import java.util.List;
 import java.util.Locale;
 
+import me.toptas.fancyshowcase.FancyShowCaseView;
 import ng.max.slideview.SlideView;
 
 public class Home extends AppCompatActivity
@@ -62,9 +63,17 @@ public class Home extends AppCompatActivity
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this).build();
         mGoogleApiClient.connect();
+
+        new FancyShowCaseView.Builder(this)
+                .focusOn(slideView)
+                .title("Slide to active alert")
+                .build()
+
+                .show();
+
         //Database
-        SharedPreferences.Editor editor = sharedpreferences.edit();
-        sharedpreferences = getSharedPreferences("Database", Context.MODE_PRIVATE);
+//        SharedPreferences.Editor editor = sharedpreferences.edit();
+//        sharedpreferences = getSharedPreferences("Database", Context.MODE_PRIVATE);
        // vinNum =  sharedpreferences.getString(VIN_NUM, "");
         slideView.setOnSlideCompleteListener(new SlideView.OnSlideCompleteListener() {
             @Override
