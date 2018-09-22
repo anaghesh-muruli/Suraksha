@@ -24,7 +24,7 @@
 
         app:sv_reverseSlide="false"
         app:sv_slideBackgroundColor="#c43a14"
-        app:sv_slideText="Checkout"
+        app:sv_slideText="Slide to Activate"
         app:sv_slideTextColor="#ffffff"
         app:sv_slideTextSize="16sp" />
 </android.support.constraint.ConstraintLayout>
