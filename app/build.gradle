@@ -37,5 +37,8 @@ dependencies {
     implementation 'com.github.MAXDeliveryNG:slideview:1.1.0'
     implementation 'com.github.GrenderG:Toasty:1.3.0'
     implementation 'com.github.faruktoptas:FancyShowCaseView:1.0.1'
+    implementation 'agency.tango.android:material-intro-screen:0.0.5'
+
+
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }

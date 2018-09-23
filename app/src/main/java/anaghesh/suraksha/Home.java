@@ -1,5 +1,6 @@
 package anaghesh.suraksha;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +11,7 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -21,6 +23,8 @@ import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -47,6 +51,7 @@ public class Home extends AppCompatActivity
     LocationManager locationManager;
     public static SharedPreferences sharedpreferences;
     private double lat, lng;
+    ImageView contacts, settings, community, helpline;
     LocationRequest mLocationRequest;
     GoogleApiClient mGoogleApiClient;
     PendingResult<LocationSettingsResult> result;
@@ -70,6 +75,41 @@ public class Home extends AppCompatActivity
                 .build()
 
                 .show();
+            getLocation();
+
+            contacts.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                startActivity(new Intent(Home.this,ContactList.class));
+                }
+            });
+
+            community.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String url = "http://192.168.43.225/home.html";
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    startActivity(i);
+
+                }
+            });
+
+            helpline.setOnClickListener(new View.OnClickListener() {
+                @SuppressLint("MissingPermission")
+                @Override
+                public void onClick(View view) {
+                    Intent callIntent = new Intent(Intent.ACTION_CALL);
+                    callIntent.setData(Uri.parse("tel:1091"));
+                    startActivity(callIntent);
+                }
+            });
+            settings.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
 
         //Database
 //        SharedPreferences.Editor editor = sharedpreferences.edit();
@@ -78,7 +118,9 @@ public class Home extends AppCompatActivity
         slideView.setOnSlideCompleteListener(new SlideView.OnSlideCompleteListener() {
             @Override
             public void onSlideComplete(SlideView slideView) {
-          //  sendSMS(phno,message);
+            sendSMS("9483706181","I'm in danger! Track me: http://maps.google.com/maps?q="+lat+","+lng);
+            sendSMS("9611836819","I'm in danger! Track me: http://maps.google.com/maps?q="+lat+","+lng);
+            sendSMS("9845751385","I'm in danger! Track me: http://maps.google.com/maps?q="+lat+","+lng);
 
 
 
@@ -272,9 +314,7 @@ public class Home extends AppCompatActivity
 
         } else if (id == R.id.nav_slideshow) {
 
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
+        }  else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
 
@@ -286,6 +326,10 @@ public class Home extends AppCompatActivity
     }
     void setupUI(){
         slideView = findViewById(R.id.slideview);
+        community = findViewById(R.id.comm);
+        settings = findViewById(R.id.settings);
+        contacts = findViewById(R.id.contact);
+        helpline = findViewById(R.id.helpline);
     }
     public void sendSMS(String phoneNo, String msg) {
         try {

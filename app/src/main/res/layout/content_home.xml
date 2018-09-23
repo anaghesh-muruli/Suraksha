@@ -22,14 +22,15 @@
         app:layout_constraintVertical_bias="0.312">
 
         <ImageView
+            android:id="@+id/settings"
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:src="@drawable/settings"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+            app:layout_constraintStart_toEndOf="@+id/helpline"
+            app:layout_constraintTop_toBottomOf="@+id/comm" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/helpline"
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:src="@drawable/helpline"
@@ -37,7 +38,8 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView4"
+
+            android:id="@+id/comm"
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:src="@drawable/community"
@@ -45,11 +47,72 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:id="@+id/contact"
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:src="@drawable/contacts"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/contacts_string"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/add_contacts"
+            android:gravity="center_horizontal"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/helpline"
+            app:layout_constraintEnd_toEndOf="@+id/contact"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/community_string"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/community"
+            android:textSize="15sp"
+            android:gravity="center_horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/settings"
+            app:layout_constraintEnd_toEndOf="@+id/comm"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toEndOf="@+id/contact" />
+
+        <TextView
+            android:id="@+id/distress_help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/distress_helpline"
+            android:gravity="center_horizontal"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/helpline"
+            app:layout_constraintEnd_toEndOf="@+id/helpline"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="@+id/helpline" />
+
+        <TextView
+            android:id="@+id/settings_string"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/settings"
+            android:gravity="center_horizontal"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/settings"
+            app:layout_constraintEnd_toEndOf="@+id/settings"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toEndOf="@+id/helpline" />
     </android.support.constraint.ConstraintLayout>
 
     <ng.max.slideview.SlideView
@@ -68,7 +131,7 @@
 
         app:sv_reverseSlide="false"
         app:sv_slideBackgroundColor="#c43a14"
-        app:sv_slideText="Slide to Activate"
+        app:sv_slideText="@string/actvate"
         app:sv_slideTextColor="#ffffff"
         app:sv_slideTextSize="16sp" />
 

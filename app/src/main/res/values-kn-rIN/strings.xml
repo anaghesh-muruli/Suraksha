@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Suraksha</string>
+    <string name="action_settings">ಮುಖಪುಟ</string>
+    <string name="contact_list">ಸಂಪರ್ಕ ಪಟ್ಟಿ</string>
+    <string name="add">जोड़ना</string>
+    <string name="add_contacts">ಸೇರಿಸ</string>
+    <string name="community">समुदाय</string>
+    <string name="distress_helpline">ಸಮುದಾಯ</string>
+    <string name="settings">ಸೆಟ್ಟಿಂಗ್ಗಳು</string>
+    <string name="actvate">ಸಕ್ರಿಯಗೊಳಿಸಲು ಸ್ಲೈಡ್</string>
+    <string name="title_activity_home">"ಮುಖಪುಟ"</string>
+</resources>
