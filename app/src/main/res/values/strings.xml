@@ -7,7 +7,7 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    <string name="contact_list">contlist</string>
+    <string name="contact_list">Search Contact</string>
     <string name="add">add</string>
     <string name="add_contacts">Add Contacts</string>
     <string name="community">Community</string>

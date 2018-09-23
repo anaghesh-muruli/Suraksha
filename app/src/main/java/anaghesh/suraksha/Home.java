@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.SharedPreferences;
+import android.hardware.SensorManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -37,6 +38,7 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
+import com.squareup.seismic.ShakeDetector;
 
 import java.util.List;
 import java.util.Locale;
@@ -46,7 +48,7 @@ import ng.max.slideview.SlideView;
 
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,LocationListener,GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener{
+        GoogleApiClient.OnConnectionFailedListener,ShakeDetector.Listener{
     private SlideView slideView;
     LocationManager locationManager;
     public static SharedPreferences sharedpreferences;
@@ -68,7 +70,9 @@ public class Home extends AppCompatActivity
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this).build();
         mGoogleApiClient.connect();
-
+        SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        ShakeDetector sd = new ShakeDetector(this);
+        sd.start(sensorManager);
         new FancyShowCaseView.Builder(this)
                 .focusOn(slideView)
                 .title("Slide to active alert")
@@ -342,5 +346,8 @@ public class Home extends AppCompatActivity
                     Toast.LENGTH_LONG).show();
             ex.printStackTrace();
         }
+    }
+    @Override public void hearShake() {
+        Toast.makeText(this, "Don't shake me, bro!", Toast.LENGTH_SHORT).show();
     }
 }

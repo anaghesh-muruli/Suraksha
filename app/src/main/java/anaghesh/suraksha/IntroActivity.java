@@ -28,15 +28,15 @@ public class IntroActivity extends MaterialIntroActivity {
         addSlide(new SlideFragmentBuilder()
                         .backgroundColor(R.color.orange)
                         .buttonsColor(R.color.colorPrimary)
-                        .image(R.drawable.settings)
+                        .image(R.drawable.user_friendly)
                         .title("User friendly")
-                         .description("Quick and Easy")
+                        .description("Quick and Easy")
                         .build());
 
         addSlide(new SlideFragmentBuilder()
                 .backgroundColor(R.color.orange)
                 .buttonsColor(R.color.colorPrimary)
-                .image(R.drawable.settings)
+                .image(R.drawable.track)
                 .title("Safe and secure")
                 .description("Your safety is our first priority")
                 .build());
@@ -44,7 +44,7 @@ public class IntroActivity extends MaterialIntroActivity {
         addSlide(new SlideFragmentBuilder()
                 .backgroundColor(R.color.orange)
                 .buttonsColor(R.color.colorPrimary)
-                .image(R.drawable.settings)
+                .image(R.drawable.track)
                 .title("Track your rides on the go")
                 .description("Anywhere. Anytime.")
                 .build());

@@ -47,7 +47,7 @@ public class MyAdapter extends RecyclerView.Adapter<ContactViewHolder>{
            public void onClick(View v) {
 
                Integer pos = (Integer)holder.cb.getTag();
-               Toast.makeText(mcontext, st.get(pos).getDt() + " clicked! ", Toast.LENGTH_SHORT).show();
+               Toast.makeText(mcontext, st.get(pos).getDt() + " Selected ", Toast.LENGTH_SHORT).show();
                for(int i=0; i<3;i++)
                {
 
