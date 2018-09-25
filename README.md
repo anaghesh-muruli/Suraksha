@@ -7,7 +7,7 @@ SURAKSHA sends your location details to a list of pre selected contacts when you
 SURAKSHA stands apart from other apps due to it's distinguished features of very interactive online Community Forum, Language Support, and Motion Sensors made for ease-of-use.
 
 This project is licensed under the terms of the MIT license
-Copyright (c) Anaghesh Muruli 2018
+
 
 
 
