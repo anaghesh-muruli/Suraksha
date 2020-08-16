@@ -1,4 +1,4 @@
-# Suraksha
+# Suraksha - the android app
 
 SURAKSHA - The Women's Safety App
 
